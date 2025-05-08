@@ -10,15 +10,13 @@
     return result;
     
   }
- formatString("Hello",true)
-
-
 
   // Problem solving 2
   function filterByRating(
     items: { title: string; rating: number }[]
-  ): { title: string; rating: number }[] {
-    const result =  (items.filter((item) => item.rating >= 4))  
+  ): { title: string; rating: number }[] { 
+ 
+    const  result =  (items.filter((item) => item.rating >= 4))  
     console.log(result)
     return result
   }
@@ -28,15 +26,21 @@
     { title: "Book B", rating: 3.2 },
     { title: "Book C", rating: 5.0 },
   ];
- filterByRating(books)
+
 
 // Problem solbing 3
 function concatenateArrays<T>(...arrays: T[][]): T[] {
-   const result = arrays.flat() 
-   console.log(result )
-   return result
+  const result: T[] = [];
+  for (const array of arrays) {
+    for (const item of array) {
+      result.push(item);
+    }
+  }
+  console.log(result);
+  return result;
 }
-concatenateArrays([1, 2], [3, 4], [5]); 
+
+
 // Problen solving 4
 class Vehicle {
     private _make:string;
@@ -61,8 +65,7 @@ class Car extends Vehicle {
 }
 
 const myCar = new Car("Toyota",2020,"corola")
-myCar.getInfo()
-// myCar.getModel()
+
 
 // practice 5 
 function processValue(value: string | number): number{
@@ -76,6 +79,7 @@ function processValue(value: string | number): number{
     }
     return 0;
 }
+
 // Practice 6
 interface Product {
     name: string;
@@ -91,11 +95,12 @@ interface Product {
      return sorted[0]
   }
 
-const products = [
-  { name: "Pen", price: 10 },
-  { name: "Notebook", price: 25 },
-  { name: "Bag", price: 50 }
-];
+  const products = [
+    { name: "Pen", price: 10 },
+    { name: "Notebook", price: 25 },
+    { name: "Bag", price: 50 }
+  ];
+
 // Problem solving 7
 enum Day {
   Monday,
@@ -117,22 +122,21 @@ function getDayType(day: Day): string{
   console.log(result)
   return result
 }
-getDayType(Day.Sunday)
+
 
 // Problem 8
-async function squareAsync(n: number): Promise<string> {
+async function squareAsync(n: number): Promise<Number> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (n < 0) {
         reject(new Error("Negative number not allowed"));
       } else {
-        resolve(`after 1s: ${n * n}`);
-        console.log(`after 1s: ${n * n}`)
+        resolve(n*n)
       }
     }, 1000);
   });
 }
- squareAsync(4)
+
 
 
 
