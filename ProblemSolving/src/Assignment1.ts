@@ -123,7 +123,6 @@ function getDayType(day: Day): string{
   return result
 }
 
-
 // Problem 8
 async function squareAsync(n: number): Promise<Number> {
   return new Promise((resolve, reject) => {
